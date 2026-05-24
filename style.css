@@ -220,10 +220,10 @@ em {
 .hero-scroll-hint {
   position: absolute;
   bottom: 3rem;
-  right: 3rem;
+  left: 3rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -1715,4 +1715,261 @@ section {
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============================================
+   WHO LINK (added for profile page)
+   ============================================ */
+.who-link-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.who-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 2.25rem;
+  background: var(--white);
+  color: var(--black) !important;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  transition: all 0.3s ease !important;
+}
+
+.who-link:hover {
+  background: var(--black);
+  color: var(--white) !important;
+  opacity: 1 !important;
+  transform: translateY(-2px);
+}
+
+.who-link-arrow {
+  transition: transform 0.3s ease;
+}
+
+.who-link:hover .who-link-arrow {
+  transform: translateX(4px);
+}
+
+/* nav current state */
+.nav-current {
+  position: relative;
+  font-weight: 700 !important;
+}
+
+.nav-current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ============================================
+   FACT SECTION - EXTENDED (新メッセージ構造)
+   「規模ではなく戦略」を中核に、中堅3社の事例で補強
+   ============================================ */
+
+/* 出典表記 */
+.stat-source {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* FACT INSIGHT - 「大手だから」を否定する反転メッセージ */
+.fact-insight {
+  margin-top: 6rem;
+  padding: 5rem 2rem;
+  background: var(--black);
+  color: var(--white);
+  text-align: left;
+}
+
+.fact-insight .kicker {
+  color: var(--accent);
+}
+
+.fact-insight-text {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  margin-bottom: 2.5rem;
+  max-width: 1100px;
+}
+
+.fact-insight-text em {
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: 0;
+  font-feature-settings: "palt" 1;
+}
+
+.fact-insight-body {
+  font-size: clamp(1.125rem, 1.6vw, 1.5rem);
+  line-height: 1.8;
+  color: var(--gray-300);
+  max-width: 720px;
+  font-weight: 400;
+}
+
+/* GROWING EXAMPLES - 中堅3社の急成長事例 */
+.growing-examples {
+  margin-top: 6rem;
+  padding: 4rem 2rem 2rem;
+}
+
+.growing-examples-title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.growing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.growing-card {
+  padding: 3rem 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.growing-card:hover {
+  border-color: var(--black);
+  transform: translateY(-4px);
+}
+
+.growing-num {
+  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.growing-num span {
+  font-size: 0.45em;
+  margin-left: 0.05em;
+  font-weight: 700;
+}
+
+.growing-name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+  color: var(--black);
+}
+
+.growing-location {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.growing-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.growing-desc strong {
+  font-weight: 900;
+  color: var(--black);
+}
+
+.growing-strategy {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* FACT CONCLUSION - 結論メッセージ */
+.fact-conclusion {
+  margin-top: 6rem;
+  padding: 6rem 2rem;
+  background: var(--accent);
+  color: var(--white);
+  text-align: left;
+}
+
+.fact-conclusion .kicker {
+  color: var(--white);
+  opacity: 0.7;
+}
+
+.fact-conclusion-text {
+  font-size: clamp(2.25rem, 5.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin-bottom: 3rem;
+  color: var(--white);
+}
+
+.fact-conclusion-text em {
+  color: var(--white);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.fact-conclusion-body {
+  font-size: clamp(1.125rem, 1.6vw, 1.5rem);
+  line-height: 1.8;
+  color: var(--white);
+  max-width: 720px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .growing-grid {
+    grid-template-columns: 1fr;
+  }
+  .fact-insight,
+  .fact-conclusion {
+    padding: 4rem 1.5rem;
+  }
+  .growing-examples {
+    margin-top: 4rem;
+    padding: 2rem 1.5rem;
+  }
 }
